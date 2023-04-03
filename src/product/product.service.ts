@@ -34,7 +34,7 @@ export class ProductService {
     newPrice: number,
     newDescription: string,
   ): Promise<ProductDocument> {
-    let existingProduct = await this.find(id);
+    const existingProduct = await this.find(id);
     existingProduct.name = newName ?? existingProduct.name;
     existingProduct.price = newPrice ?? existingProduct.price;
     existingProduct.description = newDescription ?? existingProduct.description;
